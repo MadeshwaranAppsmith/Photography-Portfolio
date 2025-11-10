@@ -61,16 +61,18 @@ const CustomCursor = () => {
 
   return (
     <>
-      {/* Inner dot - solid and visible */}
+      {/* Inner dot - 40% smaller */}
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 rounded-full pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999]"
         style={{
+          width: '7.2px',
+          height: '7.2px',
           backgroundColor: '#000',
-          boxShadow: '0 0 10px rgba(0,0,0,0.3)',
+          boxShadow: '0 0 6px rgba(0,0,0,0.3)',
         }}
         animate={{
-          x: mousePosition.x - 6,
-          y: mousePosition.y - 6,
+          x: mousePosition.x - 3.6,
+          y: mousePosition.y - 3.6,
           scale: isHovering ? 0.5 : 1,
         }}
         transition={{
@@ -80,16 +82,18 @@ const CustomCursor = () => {
         }}
       />
 
-      {/* Outer ring - larger and more visible */}
+      {/* Outer ring - 40% smaller */}
       <motion.div
-        className="fixed top-0 left-0 w-10 h-10 rounded-full pointer-events-none z-[9998]"
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9998]"
         style={{
-          border: '2px solid #000',
+          width: '24px',
+          height: '24px',
+          border: '1.2px solid #000',
           backgroundColor: isHovering ? 'rgba(0,0,0,0.1)' : 'transparent',
         }}
         animate={{
-          x: mousePosition.x - 20,
-          y: mousePosition.y - 20,
+          x: mousePosition.x - 12,
+          y: mousePosition.y - 12,
           scale: isHovering ? 1.5 : 1,
         }}
         transition={{
@@ -99,18 +103,20 @@ const CustomCursor = () => {
         }}
       />
 
-      {/* Glow effect on hover */}
+      {/* Glow effect on hover - 40% smaller */}
       {isHovering && (
         <motion.div
-          className="fixed top-0 left-0 w-16 h-16 rounded-full pointer-events-none z-[9997]"
+          className="fixed top-0 left-0 rounded-full pointer-events-none z-[9997]"
           style={{
-            border: '1px solid rgba(0,0,0,0.2)',
+            width: '38.4px',
+            height: '38.4px',
+            border: '0.6px solid rgba(0,0,0,0.2)',
             backgroundColor: 'rgba(0,0,0,0.05)',
           }}
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{
-            x: mousePosition.x - 32,
-            y: mousePosition.y - 32,
+            x: mousePosition.x - 19.2,
+            y: mousePosition.y - 19.2,
             opacity: 1,
             scale: 1,
           }}

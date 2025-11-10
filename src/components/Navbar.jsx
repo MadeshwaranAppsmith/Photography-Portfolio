@@ -42,7 +42,7 @@ const Navbar = () => {
           }}
           whileHover={{ opacity: 0.7 }}
         >
-          Your Name
+          Pixel Stories
         </motion.a>
 
         <div className="hidden md:flex items-center gap-8">

@@ -110,7 +110,7 @@ const Contact = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
         >
           <p className="text-sm font-light text-gray-500">
-            © {new Date().getFullYear()} Your Name. All rights reserved.
+            © {new Date().getFullYear()} Pixel Stories. All rights reserved.
           </p>
         </motion.div>
       </div>
