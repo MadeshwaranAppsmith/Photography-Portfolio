@@ -63,9 +63,9 @@ const About = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            I am a photographer passionate about capturing the beauty of the world around us.
-            Through my lens, I seek to tell stories, evoke emotions, and preserve moments that
-            might otherwise be forgotten.
+            We believe every wedding is a beautifully chaotic masterpiece—where aunties critique your camera angles,
+            uncles photobomb your perfectly framed shots, and someone inevitably asks if you got that one moment
+            (you didn't, because they didn't tell you it was happening).
           </motion.p>
           <motion.p
             className="text-lg md:text-xl font-light leading-relaxed text-gray-700"
@@ -74,9 +74,9 @@ const About = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            My work spans landscapes, portraits, and documentary photography, always with a focus
-            on authenticity and the interplay between light and shadow. Each image is a carefully
-            composed narrative, inviting viewers to pause and reflect.
+            But here's the thing—somewhere between dodging flying flower petals, navigating through
+            200 relatives who suddenly became photography directors, and trying not to cry during the
+            vidaai (okay, we always cry), we capture magic. Real, raw, tear-jerking, laugh-till-you-snort magic.
           </motion.p>
           <motion.p
             className="text-lg md:text-xl font-light leading-relaxed text-gray-700"
@@ -85,8 +85,20 @@ const About = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Based in [Your Location], I am available for commissions, collaborations, and
-            exhibitions worldwide.
+            We're not just photographers—we're professional tear-duct activators, stealth mode ninjas
+            (you won't even know we're there), and certified experts at making awkward couples look like
+            they actually enjoy taking photos together. Your love story deserves to be told with all its
+            messy, beautiful, wonderfully imperfect glory.
+          </motion.p>
+          <motion.p
+            className="text-lg md:text-xl font-light leading-relaxed text-gray-600 italic"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            P.S. Yes, we'll make sure your mehendi looks Instagram-worthy. No, we can't Photoshop out
+            your suspicious relative from every photo. We tried. They have superpowers.
           </motion.p>
         </div>
       </div>
