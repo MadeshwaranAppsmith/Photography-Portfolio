@@ -1,69 +1,124 @@
-Cuberto-inspired Creative Studio Site
-====================================
+# Modern Photography Portfolio
 
-Modern, production-ready website inspired by the look-and-feel, interactions, and motion design of Cuberto (no proprietary content/assets).
+A modern, minimal photography portfolio website with elegant scroll-triggered animations, custom cursor effects, and a cinematic slideshow experience.
 
-Features
---------
-- GSAP intro, reveal-on-scroll, hover micro-interactions
-- Lenis smooth scrolling with optional section snapping
-- Custom magnetic cursor with contextual labels
-- Multi-page: Home, Projects, Case Studies (3), About, Contact
-- Reduced-motion feature flag and low-power device guard
-- Accessible focus states, semantic structure, lazy media
+## Features
 
-Tech Stack
-----------
-- HTML5, CSS, and vanilla JS modules
-- GSAP and Lenis via CDN (instant run)
-- Optional Vite for dev/build/preview
+- **Clean, Minimal Design**: Lots of white space, smooth typography, photography-focused
+- **Full-Screen Slideshow**: Scroll through full-screen images with smooth transitions
+- **Scroll Animations**: Parallax effects, fade-ins, and image scaling on scroll
+- **Custom Cursor**: Interactive cursor that expands on hover over images and links
+- **Fixed Minimal Navbar**: Clean navigation with logo and menu
+- **Responsive Design**: Perfectly responsive on mobile, tablet, and desktop
+- **Performance Optimized**: Lazy loading images, smooth transitions
+- **Background Color Transitions**: Subtle background color changes on scroll
+- **Animated Captions**: Photo captions animate in from bottom on scroll
 
-Project Structure
------------------
-- `src/`
-  - `index.html`, `projects.html`, `about.html`, `contact.html`
-  - `project/` — `project-alpha.html`, `project-beta.html`, `project-gamma.html`
-  - `styles/main.css` — design system and components
-  - `scripts/` — `config.js`, `cursor.js`, `smooth-scroll.js`, `animations.js`, `app.js`
-- `assets/` — logo and placeholders (served as public)
+## Tech Stack
 
-Getting Started (Instant)
--------------------------
-Option A: Open `src/index.html` directly in your browser. GSAP and Lenis are loaded via CDN, so everything works without install.
+- **React 18** - Modern React with hooks
+- **Vite** - Fast build tool and dev server
+- **Framer Motion** - Smooth animations and transitions
+- **GSAP** - Advanced scroll-triggered animations
+- **TailwindCSS** - Utility-first CSS framework
 
-Option B: Serve locally (recommended for routing and performance testing):
+## Getting Started
 
-```bash
-python3 -m http.server 8080
-# then visit http://localhost:8080/src/
-```
+### Installation
 
-Vite Dev/Build/Preview
-----------------------
 ```bash
 npm install
-npm run dev      # http://localhost:5173
-npm run build    # outputs to /dist
-npm run preview  # preview dist on http://localhost:5174
 ```
 
-Configuration
--------------
-- Reduced motion: auto-respects system preferences; override via `?reducedMotion=true|false`
-- Heavy effects: auto-disables on low-power devices; override via `?heavyEffects=true|false`
-- Theme: `?theme=light|dark`
+### Development
 
-Deploy
-------
-- Netlify or Vercel: Deploy the `dist` folder after `npm run build`
-- Static hosting: Upload `dist` contents or serve `src` directly (CDN scripts remove bundler dependency)
+```bash
+npm run dev
+```
 
-Notes
------
-- Ensure images are optimized; swap `/assets/placeholder-wide.svg` with actual media.
-- Use `<picture>` sources and `loading="lazy"` for heavy assets on case studies.
+Visit `http://localhost:5173` to see your portfolio.
 
-License
--------
-MIT for this template. External libraries under their respective licenses. This is a tribute-style implementation with placeholder content. 
+### Build
 
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Customization
+
+### Adding Your Photos
+
+1. Edit `src/data/photos.js` to add your own photos
+2. Replace the `src` URLs with your own image paths (local or external)
+3. Update titles and captions to match your work
+
+Example:
+```javascript
+{
+  id: 1,
+  src: '/assets/my-photo-1.jpg', // or external URL
+  alt: 'Description of photo',
+  title: 'Photo Title',
+  caption: 'Your caption here',
+}
+```
+
+### Updating Your Information
+
+1. **Name/Logo**: Edit `src/components/Navbar.jsx` - change "Your Name" to your actual name
+2. **Landing Page**: Edit `src/components/Landing.jsx` - update the title and subtitle
+3. **About Section**: Edit `src/components/About.jsx` - replace with your bio
+4. **Contact Section**: Edit `src/components/Contact.jsx` - update social links and email
+
+### Styling
+
+The project uses TailwindCSS. You can customize:
+- Colors in `tailwind.config.js`
+- Global styles in `src/index.css`
+- Component-specific styles in individual component files
+
+## Project Structure
+
+```
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx       # Fixed navigation bar
+│   │   ├── Landing.jsx      # Landing page with name/title
+│   │   ├── Gallery.jsx      # Full-screen slideshow gallery
+│   │   ├── About.jsx        # About section
+│   │   ├── Contact.jsx      # Contact section with social links
+│   │   └── CustomCursor.jsx # Custom cursor component
+│   ├── data/
+│   │   └── photos.js        # Photo data (edit this!)
+│   ├── App.jsx              # Main app component
+│   ├── main.jsx             # React entry point
+│   └── index.css            # Global styles
+├── assets/                  # Your images go here
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## Performance Tips
+
+- Use optimized images (WebP format recommended)
+- Keep image file sizes reasonable (< 500KB per image)
+- The first 2 images load eagerly, rest are lazy-loaded
+- Consider using a CDN for images
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## License
+
+MIT
