@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+	<title>Studio Nela</title>
+	<rect width="240" height="240" rx="56" fill="#111827"/>
+	<g transform="translate(60,60)">
+		<path d="M0 120V0h16l88 88V0h16v120h-16L16 32v88H0z" fill="white"/>
+	</g>
+</svg>
+
+

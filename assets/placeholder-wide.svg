@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+	<title>Project Placeholder</title>
+	<defs>
+		<linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+			<stop offset="100%" stop-color="#f3f4f6" stop-opacity="0.9"/>
+		</linearGradient>
+	</defs>
+	<rect width="1600" height="900" rx="28" fill="url(#g)"/>
+	<g opacity="0.9">
+		<rect x="100" y="120" width="1400" height="660" rx="18" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+		<rect x="140" y="160" width="600" height="420" rx="12" fill="#f3f4f6" />
+		<rect x="780" y="160" width="300" height="20" rx="6" fill="#e5e7eb" />
+		<rect x="780" y="200" width="420" height="18" rx="6" fill="#e5e7eb" />
+		<rect x="780" y="240" width="360" height="18" rx="6" fill="#e5e7eb" />
+		<rect x="780" y="280" width="320" height="18" rx="6" fill="#e5e7eb" />
+		<rect x="780" y="340" width="420" height="12" rx="6" fill="#e5e7eb" />
+		<rect x="780" y="364" width="400" height="12" rx="6" fill="#e5e7eb" />
+		<rect x="780" y="388" width="420" height="12" rx="6" fill="#e5e7eb" />
+		<rect x="780" y="452" width="200" height="44" rx="12" fill="#111827" />
+		<rect x="1000" y="452" width="210" height="44" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
+	</g>
+</svg>
+
+
