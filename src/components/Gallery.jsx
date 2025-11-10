@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ArrowDown } from 'phosphor-react'
 import { photos } from '../data/photos'
 
 const Gallery = () => {
@@ -134,17 +133,6 @@ const Gallery = () => {
                 </motion.div>
               </div>
             </div>
-
-            {/* Scroll indicator */}
-            {i < photos.length - 2 && (
-              <motion.div
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <ArrowDown size={24} weight="light" className="text-white/70" />
-              </motion.div>
-            )}
           </div>
         )
         i += 2 // Skip both photos
@@ -175,18 +163,6 @@ const Gallery = () => {
               />
               <div className="absolute inset-0 bg-black/20" />
             </motion.div>
-
-
-            {/* Scroll indicator */}
-            {i < photos.length - 1 && (
-              <motion.div
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <ArrowDown size={24} weight="light" className="text-white/70" />
-              </motion.div>
-            )}
           </div>
         )
         i += 1
