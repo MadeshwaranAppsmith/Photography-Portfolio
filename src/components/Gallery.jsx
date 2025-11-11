@@ -2,11 +2,53 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { photos } from '../data/photos'
+import { photos as fallbackPhotos } from '../data/photos'
+import { getInstagramMedia, getStoredAccessToken } from '../services/instagram'
 
 const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [photos, setPhotos] = useState(fallbackPhotos)
   const sectionsRef = useRef([])
+
+  // Fetch Instagram photos on mount
+  useEffect(() => {
+    const loadInstagramPhotos = async () => {
+      try {
+        const token = getStoredAccessToken()
+        if (token) {
+          const instagramPhotos = await getInstagramMedia(token, 20)
+
+          // Detect image orientation by loading images
+          const photosWithOrientation = await Promise.all(
+            instagramPhotos.map(async (photo) => {
+              return new Promise((resolve) => {
+                const img = new Image()
+                img.onload = () => {
+                  resolve({
+                    ...photo,
+                    orientation: img.naturalWidth > img.naturalHeight ? 'landscape' : 'portrait',
+                  })
+                }
+                img.onerror = () => {
+                  resolve({ ...photo, orientation: 'landscape' })
+                }
+                img.src = photo.src
+              })
+            })
+          )
+
+          if (photosWithOrientation.length > 0) {
+            setPhotos(photosWithOrientation)
+          }
+        }
+      } catch (error) {
+        console.error('Failed to load Instagram photos, using fallback:', error)
+        setPhotos(fallbackPhotos)
+      }
+    }
+
+    loadInstagramPhotos()
+  }, [])
 
   useEffect(() => {
     const sections = sectionsRef.current
