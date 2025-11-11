@@ -1,50 +1,7 @@
-import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { photos as fallbackPhotos } from '../data/photos'
-import { getInstagramMedia, getStoredAccessToken } from '../services/instagram'
+import { photos } from '../data/photos'
 
 const Gallery = () => {
-  const [photos, setPhotos] = useState(fallbackPhotos)
-
-  // Fetch Instagram photos on mount
-  useEffect(() => {
-    const loadInstagramPhotos = async () => {
-      try {
-        const token = getStoredAccessToken()
-        if (token) {
-          const instagramPhotos = await getInstagramMedia(token, 20)
-
-          // Detect image orientation by loading images
-          const photosWithOrientation = await Promise.all(
-            instagramPhotos.map(async (photo) => {
-              return new Promise((resolve) => {
-                const img = new Image()
-                img.onload = () => {
-                  resolve({
-                    ...photo,
-                    orientation: img.naturalWidth > img.naturalHeight ? 'landscape' : 'portrait',
-                  })
-                }
-                img.onerror = () => {
-                  resolve({ ...photo, orientation: 'landscape' })
-                }
-                img.src = photo.src
-              })
-            })
-          )
-
-          if (photosWithOrientation.length > 0) {
-            setPhotos(photosWithOrientation)
-          }
-        }
-      } catch (error) {
-        console.error('Failed to load Instagram photos, using fallback:', error)
-        setPhotos(fallbackPhotos)
-      }
-    }
-
-    loadInstagramPhotos()
-  }, [])
 
   return (
     <section id="gallery" className="relative py-12 md:py-20 px-4 md:px-8 bg-white">
